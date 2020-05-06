@@ -33,7 +33,10 @@
 					<a class = "nav-link" href = "login.php">Login</a>			
 				</li>
 				<li class = "nav-item">
-					<a class = "nav-link" href = "support.php">Support</a>			
+					<a class = "nav-link" href = "support.php">Support</a>
+				</li>
+				<li class = "nav-item">
+					<a class = "nav-link" href = "show-reports.php">Reports</a>
 				</li>
 			</ul>
 		</div>

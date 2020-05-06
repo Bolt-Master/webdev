@@ -62,7 +62,7 @@ if(!empty($_POST['username']) && !empty($_POST['fname']) && !empty($_POST['lname
 		}
 
 		function getPassword(){
-			return $this->email;
+			return $this->password;
 		}
 
 		function displayInfoAboutUser() : void {
@@ -75,21 +75,28 @@ if(!empty($_POST['username']) && !empty($_POST['fname']) && !empty($_POST['lname
 
 	$user = new User($_POST['username'], $_POST['fname'], $_POST['lname'], $_POST['password'], $_POST['email']);
 
-	$stmt = $connection->prepare("INSERT INTO login(username, firstName, lastName, password, email) VALUES(?, ?, ?, ?, ?)");
+	$stmt = $connection->prepare("INSERT INTO login(username, firstName, lastName, password, email) VALUES (?, ?, ?, ?, ?)");
+	$uname = $user->getUsername();
+	$fname = $user->getFirstName();
+	$lname = $user->getLastName();
+	$pass = $user->getPassword();
+	$email = $user->getEmail();
 
-	$stmt->bind_param("sssss", $user->getUsername(), $user->getFirstName(), $user->getLastName(), $user->getPassword(), $user->getEmail());
+	$stmt->bind_param("sssss", $uname, $fname, $lname, $pass, $email);
 	$stmt->execute();
 	$connection->close();
 
 	echo '<div class="container-fluid padding">
 		<div class="row padding">
 			<div class="col-md-12 col-lg-6">
+			<p>Hello
 			'.$user->getUsername().'
-			</div>
+			</p></div>
 		</div>
 	</div>';
 } else{
 	echo "<p>All fields should be filled</p>";
 }
+$connection->close();
 require("components/footer.php");
 ?>
