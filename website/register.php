@@ -53,6 +53,10 @@ if(!empty($_POST['username']) && !empty($_POST['fname']) && !empty($_POST['lname
 			return $this->fname;
 		}
 
+		function setFirstName($fname){
+			$this->fname = trim($fname);
+		}
+
 		function getLastName(){
 			return $this->lname;
 		}
@@ -98,5 +102,5 @@ if(!empty($_POST['username']) && !empty($_POST['fname']) && !empty($_POST['lname
 	echo "<p>All fields should be filled</p>";
 }
 $connection->close();
-require("components/footer.php");
+include("components/footer.php");
 ?>
