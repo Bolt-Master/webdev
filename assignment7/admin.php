@@ -1,13 +1,16 @@
 <?php
+//--FINAL--CLASS
 final class Admin{
 	private $admin;
 	private $password;
 
+	//--CONSTRUCTOR--
 	public function _construct($admin, $password){
 		$this->admin = $admin;
 		$this->password = $password;
 	}
 
+	//--GETTER
 	public function getAdmin(){ return $this->admin; }
 }
 require("components/header.php");
@@ -30,6 +33,7 @@ require("components/header.php");
 	</div>
 
 <?php
+//--DB CONNECTION--
 $connection = new mysqli("localhost", "root", "", "test");
 $counter = 0;
 include("user.php");
@@ -47,13 +51,16 @@ if(isset($_POST['submit'])){
 	if($result->num_rows > 0){
 		$select = $connection->query("SELECT fname, lname, tariff FROM users");
 		while($row = $select->fetch_assoc()){
+			//--CLASS--
 			$user = new User($row['fname'], $row['lname'], $row['tariff']);
 			array_push($array, Array("fname" => $user->getFName(), "lname" => $user->getLName(), "tariff" => $user->getTariff()));
 			$counter++;
 			}
+		//--JSON--
 		$json = json_encode($array);
 		file_put_contents("users.json", $json);
 		ob_start();
+		//--REDIRECTING--
 		header('Location: '."adminPage.php");
 		ob_end_flush();
 		} else{

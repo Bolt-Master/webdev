@@ -15,7 +15,7 @@
 		<tbody>
 			<tr>
 <?php
-$connection = new mysqli("localhost", "root", "", "test");
+$connection = new mysqli("localhost", "root", "", "univ");
 
 if($connection->connect_error){
 	die("connection failed".$connection->connect_error);

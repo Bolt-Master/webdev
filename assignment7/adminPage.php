@@ -27,6 +27,7 @@ require("components/footer.php");
 ?>
 
 		<script type="text/javascript">
+			//--VUE JS--
 			new Vue({
 				el:'#vue',
 				data: {
@@ -37,6 +38,7 @@ require("components/footer.php");
 				},
 				methods: {
 					getUsers(){
+						//--AJAX
 						axios.get('http://localhost/php/assignment7/users.json').then(response => {
 							this.users = response.data;
 						}) 

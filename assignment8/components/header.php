@@ -9,7 +9,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	<link href="style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -24,19 +23,11 @@
 					<a class = "nav-link" href = "index.php">Home</a>
 				</li>
 				<li class = "nav-item">
-					<a class = "nav-link" href = "register.php">Sign Up</a>			
-				</li>
-				<li class = "nav-item">
-					<a class = "nav-link" href = "news.php">News</a>			
+					<a class = "nav-link" href = "sign-up.php">Sign Up</a>			
 				</li>
 				<li class = "nav-item">
 					<a class = "nav-link" href = "login.php">Login</a>			
 				</li>
-				<li class = "nav-item">
-					<a class = "nav-link" href = "support.php">Support</a>
-				</li>
-				<li class = "nav-item">
-					<a class = "nav-link" href = "show-reports.php">Reports</a>
 				</li>
 			</ul>
 		</div>
