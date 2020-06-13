@@ -1,6 +1,7 @@
 <?php
 $connection = mysqli_connect("localhost", "root", "", "startups");
 if($connection->connect_error){
+	//--exit
 	exit();
 }
 
@@ -38,6 +39,7 @@ if($connection->connect_error){
 		for($counter = 0; $counter < 14; $counter++){
 			echo "<th>".$row[$counter]."</th>";
 		}
+		echo "</tr>";
 	}
 
 ?>
